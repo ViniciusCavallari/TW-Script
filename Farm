@@ -24,7 +24,6 @@ const TEMPLATES = {
         keyPressSettings: "2.887161816",
         "profile:FarmA": "2.4238495228",
         "profile:FarmB": "2.4030948012",
-        "profile:FarmC": "2.4105243160",
       },
       TTL: {},
     },
@@ -33,46 +32,46 @@ const TEMPLATES = {
     working: false,
     "profile:Default": [
       "1",
-      String(TWA.pagesToLoad ?? 3),
+      "6",
       "distance",
       "asc",
-      false,
-      false,
-      false,
-      true,
-      true,
-      true,
-      true,
-      false,
-      "hide",
-      "",
-      false,
-      false,
-      false,
-      true,
+      false, //all_none
+      false, //blue
+      false, //green
+      true, // yellow
+      true, //red_yellow
+      true, //red_blue
+      true, //red
+      false, //hide_recent_farms
+      "hide", //sent_time_filter
+      "", //hide_recent_time
+      false, //enable_hauls
+      false, //full
+      false, //partial
+      true, // enable_attacks
       "greater_than",
       "5",
-      true,
+      true, // enable walls
       "greater_than",
       "0",
-      true,
+      true, //enable_distances
       "greater_than",
-      String(TWA.maxDistance),
-      false,
+      "40",
+      false,// enable_scouts
       "greater_than",
-      "",
+      "", //haul_value
+      "hide", //continent_display
+      "", //continent_list
+      false, //enable time
       "hide",
       "",
-      false,
-      "hide",
-      "",
-      true,
-      false,
-      false,
-      "",
-      true,
+      true, //enable_auto_rune
+      false, //next_village_no_farms
+      false, //next_village_scouts
+      "", // scouts_left
+      true, //next_village_troops
       "20",
-      true,
+      false,
     ],
     profileList: ["Default", "FarmA", "FarmB"],
     keyPressSettings: {
@@ -103,7 +102,7 @@ const TEMPLATES = {
     },
     "profile:FarmA": [
       "1",
-      String(TWA.pagesToLoad ?? 3),
+      "6",
       "distance",
       "asc",
       false,
@@ -127,7 +126,7 @@ const TEMPLATES = {
       "0",
       true,
       "greater_than",
-      String(TWA.maxDistance),
+      "40",
       false,
       "greater_than",
       "",
@@ -137,8 +136,8 @@ const TEMPLATES = {
       false,
       "hide",
       "",
-      true,
-      true,
+      false,
+      false,
       false,
       "",
       true,
@@ -147,7 +146,7 @@ const TEMPLATES = {
     ],
     "profile:FarmB": [
       "1",
-      String(TWA.pagesToLoad ?? 3),
+      "6",
       "distance",
       "asc",
       false,
@@ -171,7 +170,7 @@ const TEMPLATES = {
       "0",
       true,
       "greater_than",
-      String(TWA.maxDistance),
+      "40",
       false,
       "greater_than",
       "",
@@ -209,7 +208,7 @@ void 0;
 
  
 
-function delay(time, random = 0) {
+function delay(time, random = 1) {
   return new Promise(function (resolve) {
     setTimeout(resolve, time + parseInt(Math.random() * random));
   });
