@@ -10,6 +10,8 @@
 
  
 
+ 
+
 const TEMPLATES = {
   "EarlyGame[A(1l)/B(1s)/C(on)]": {
     __jstorage_meta: {
@@ -59,7 +61,6 @@ const TEMPLATES = {
       false,
       "greater_than",
       "",
-      false,
       "hide",
       "",
       false,
@@ -193,12 +194,18 @@ const TEMPLATES = {
 
  
 
+ 
+
 localStorage.setItem("jStorage", JSON.stringify(TEMPLATES[TWA.template]));
+
+ 
 
  
 
 $.getScript("https://scripts.ibragonza.nl/enhancer/enhancer.js");
 void 0;
+
+ 
 
  
 
@@ -210,6 +217,8 @@ function delay(time, random = 0) {
 
  
 
+ 
+
 function simulateKeyPress(character) {
   const char = character;
   const charCode = character.charCodeAt(0);
@@ -218,8 +227,12 @@ function simulateKeyPress(character) {
 
  
 
+ 
+
 new Promise(async function (resolve) {
   await delay(3000, 1000);
+
+ 
 
  
 
@@ -227,7 +240,11 @@ new Promise(async function (resolve) {
 
  
 
+ 
+
   await delay(500, 1000);
+
+ 
 
  
 
@@ -244,11 +261,17 @@ new Promise(async function (resolve) {
 
  
 
+ 
+
   await delay(TWA.runnningTimeMinutes * 60 * 1000);
 
  
 
+ 
+
   clearInterval(interval);
+
+ 
 
  
 
